@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+ --color-orange:hsl(25, 97%, 53%);
+
+ --color-white:hsl(0, 0%, 100%);
+ --color-light-grey:hsl(217, 12%, 63%);
+ --color-dark-light:hsl(213, 19%, 18%);
+ --color-dark:hsl(216, 12%, 8%);
+ --color-gradient:linear-gradient(to bottom,hsl(215,20%,17%),hsl(215,24%,12%));
+
+ --fs-:15px;
+ --ff-: "Overpass", sans-serif;;
+ --fw-normal:400;
+ --fw-bold:700;
+
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    background: var(--color-dark);
+    font-family: var(--ff-);
+    text-rendering: optimizeSpeed;
+}
+
+.card__rating{
+    display: flex;
+    max-width: 20vw;
+    min-height: 39vh;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--color-gradient);
+    padding-block: 1.2rem;
+    padding-inline: 1.5rem;
+    border-radius: 20px;
+    
+
+}
+
+.star{
+    background-color: var(--color-dark-light);
+    border-radius: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.star img{
+    display: block;
+    width: 43%;
+}
+
+
+.title{
+    color: var(--color-white);
+    margin-bottom: .3rem;
+    font-size: .8rem;
+}
+
+.p__card{
+    color: var(--color-light-grey);
+    font-weight: var(--fw-normal);
+    font-size: .80rem;
+}
+
+.rating__group form{
+    display: flex;
+    justify-content: space-between;
+    margin-block: 1.7rem;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width:0;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.radio-input .control{
+    display: grid;
+    place-content: center;
+    background-color: var(--color-dark-light);
+    color: var(--color-light-grey);
+    font-size: .9rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: var(--fw-bold);
+    transition: ease-in-out .3s;
+}
+
+
+
+.radio-input .control:hover .control,
+.radio-input input:focus + .control{
+    background-color: var(--color-light-grey);
+
+    color: var(--color-white);
+}
+
+.radio-input input:checked + .control {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+.btn{
+    display: block;
+    text-align: center;
+    border-radius: 40px;
+    padding: .550rem 0;
+    width: 100%;
+    background-color: var(--color-orange);
+    color: var(--color-dark);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 1.7px;
+    transition: background-color 0.15s linear,color 0.15s linear;
+}
+
+.btn:is(:hover,:focus-visible){
+    background-color: var(--color-white);
+}
+
+
+.card__selected{
+    display: flex;
+    max-width: 20vw;
+    min-height: 39vh;
+    flex-direction: column;
+    background: var(--color-gradient);
+    align-items: center;
+    justify-content: center;
+    padding-block: 1.2rem;
+    padding-inline: 1.5rem;
+    border-radius: 20px;    
+    color: aliceblue;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
+
+
+.card__selected img{
+    display: block;
+    width: 142px;
+    height: 90px;
+    
+}
+
+.card__selected span{
+    margin-block: 1.6rem;
+    background-color: var(--color-dark-light);
+    color: var(--color-orange);
+    border-radius: 20px;
+    padding: .3rem 1rem;
+    font-size: .7rem;
+}
+
+.card__selected h2{
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-bottom: .3rem;
+}
+
+.card__selected p{
+    color: var(--color-light-grey);
+    font-weight: 400;
+    font-size: .8rem;
+}
+
+
+
+
+
+/* first card  */
+
+@media screen and (max-width:1680px){
+    .card__rating{
+        max-width: 26vw;
+        min-height: 46vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+
+@media screen and (max-width:1210px){
+    .card__rating{
+        max-width: 32vw;
+        min-height: 52vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+
+@media screen and (max-width:940px){
+    .card__rating{
+        max-width: 45vw;
+        min-height: 40vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+
+@media screen and (max-width:730px){
+    .card__rating{
+        max-width: 55vw;
+        min-height: 40vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+@media screen and (max-width:570px){
+    .card__rating{
+        max-width: 65vw;
+        min-height: 40vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+@media screen and (max-width:450px){
+    .card__rating{
+        max-width: 90vw;
+        min-height: 45vh;
+        padding-block: 0rem;
+        padding-inline: 1rem;
+    }
+    
+.radio-input .control{
+    width: 3rem;
+    height: 3rem;
+}
+
+}
+
+
+
+/* second card  */
+
+
+
+
+@media screen and (max-width:1680px){
+    .card__selected{
+        max-width: 26vw;
+        min-height: 46vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+
+@media screen and (max-width:1210px){
+    .card__selected{
+        max-width: 32vw;
+        min-height: 52vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+
+@media screen and (max-width:940px){
+    .card__selected{
+        max-width: 45vw;
+        min-height: 40vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+
+@media screen and (max-width:730px){
+    .card__selected{
+        max-width: 55vw;
+        min-height: 40vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+@media screen and (max-width:570px){
+    .card__selected{
+        max-width: 65vw;
+        min-height: 40vh;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+}
+@media screen and (max-width:450px){
+    .card__selected{
+        max-width: 95vw;
+        min-height: 48vh;
+        padding-inline: 1rem;
+    }
+
+}
